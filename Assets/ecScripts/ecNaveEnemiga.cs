@@ -13,7 +13,7 @@ public class ecNaveEnemiga : MonoBehaviour {
 	public float speed = 10;
 	public float visionRadius = 50;
 	public float vida = 10;
-	public bool activar_movimiento = true;
+
 
 	public Vector3 center;
 
