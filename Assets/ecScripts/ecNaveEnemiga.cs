@@ -13,7 +13,7 @@ public class ecNaveEnemiga : MonoBehaviour {
 	public float speed = 10;
 	public float visionRadius = 5;
 	public float vida = 10;
-	public bool activar_movimiento = false;
+	public bool activar_movimiento = true;
 
 	public Vector3 center;
 	public GameObject bala;
@@ -34,13 +34,13 @@ public class ecNaveEnemiga : MonoBehaviour {
 	void Update () 
 	{
 		mover_nave ();
-		//mover_bala ();
+		mover_bala ();
 	}
 
 	void spawn_bala()
 	{
 		Vector3 pos;
-		pos = new Vector3(transform.position.x, transform.position.y, 0);
+		pos = new Vector3(this.transform.position.x, this.transform.position.y, 0);
 		Instantiate (bala, pos, Quaternion.identity);		
 
 	}
@@ -59,6 +59,12 @@ public class ecNaveEnemiga : MonoBehaviour {
 			// Finalmente movemos al enemigo en dirección a su target
 			float fixedSpeed = speed * Time.deltaTime;
 			transform.position = Vector3.MoveTowards (transform.position, target, fixedSpeed);
+			/*
+			Vector3 targetDir = target.position - transform.position;
+			float step = speed * Time.deltaTime;
+			Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+			Debug.DrawRay(transform.position, newDir, Color.red);
+			transform.rotation = Quaternion.LookRotation(newDir);*/
 
 			// Y podemos debugearlo con una línea
 			Debug.DrawLine (transform.position, target, Color.green);
@@ -67,6 +73,8 @@ public class ecNaveEnemiga : MonoBehaviour {
 
 	void mover_bala()
 	{
+		bala.transform.position = this.transform.position;
+		/*
 		// Por defecto nuestro objetivo siempre será nuestra posición inicial
 		Vector3 target = initialPosition;
 
@@ -80,6 +88,7 @@ public class ecNaveEnemiga : MonoBehaviour {
 		bala.transform.position = Vector3.MoveTowards(bala.transform.position, target, fixedSpeed);
 
 		// Y podemos debugearlo con una línea
-		Debug.DrawLine(bala.transform.position, target, Color.green);
+		Debug.DrawLine(bala.transform.position, target, Color.green);*
+		*/
 	}
 }
