@@ -8,6 +8,9 @@ public class ecSpawn : MonoBehaviour {
 
 	public GameObject enemigo;
 	public Vector3 center;
+	public int round = 1;
+	public int multiplicador = 1;
+	public int incrementoPorRound = 0;
 	public int cantidadObjetos = 1;
 	private int creados = 0;
 	public Vector2 rangoX;
@@ -29,13 +32,29 @@ public class ecSpawn : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
+	float velAparicion = 1;
 	// Update is called once per frame
 	void Update () {
-		if (creados < cantidadObjetos) 
+		
+		if (creados < cantidadObjetos) {
+			
+				spawn ();	
+				creados++;
+
+		}
+		else 
 		{
-			spawn ();	
-			creados++;
+			if (velAparicion >= 100) {
+				cantidadObjetos = cantidadObjetos + incrementoPorRound * multiplicador;
+				multiplicador += incrementoPorRound;
+
+			}
+			else 
+			{
+				creados = 0;
+			}
+			velAparicion += 0.1F;
 		}
 
 	}

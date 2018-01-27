@@ -7,6 +7,7 @@ TagManager:
   - enemy
   - bala
   - torre
+  - torre1
   layers:
   - Default
   - TransparentFX

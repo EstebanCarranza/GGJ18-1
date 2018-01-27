@@ -41,15 +41,23 @@ public class ecTorre : MonoBehaviour {
 		if (Input.GetKey (KeyCode.LeftArrow)) {izqDer = true;}
 		if (Input.GetKey (KeyCode.RightArrow)) {izqDer = false;}
 		if (Input.GetKey (KeyCode.Q)) {rotate_object (torre1, izqDer);}
-		if (Input.GetKey (KeyCode.W)) {rotate_object (torre2, izqDer);}
-		if (Input.GetKey (KeyCode.E)) {rotate_object (torre3, izqDer);}
-		if (Input.GetKey (KeyCode.R)) {rotate_object (torre4, izqDer);}
-		if (Input.GetKey (KeyCode.T)) {rotate_object (torre5, izqDer);}
-		if (Input.GetKey (KeyCode.Y)) {rotate_object (torre6, izqDer);}
+		if (Input.GetKey (KeyCode.A)) {rotate_object (torre2, izqDer);}
+		if (Input.GetKey (KeyCode.S)) {rotate_object (torre3, izqDer);}
+		if (Input.GetKey (KeyCode.D)) {rotate_object (torre4, izqDer);}
+		if (Input.GetKey (KeyCode.E)) {rotate_object (torre5, izqDer);}
+		if (Input.GetKey (KeyCode.W)) {rotate_object (torre6, izqDer);}
 
 	}
 
+	public Vector3 center;
+	public GameObject bala;
+	void spawn_balas()
+	{
+		Vector3 pos;
 
+		pos = center + new Vector3(0,0, 0);
+		Instantiate (bala, pos, Quaternion.identity);
+	}
 
 
 
