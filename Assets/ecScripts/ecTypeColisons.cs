@@ -8,7 +8,8 @@ namespace ecCode
 		torre,
 		bala_torre,
 		nave_enemiga,
-		bala_enemiga
+		bala_enemiga,
+		destino_bala_torre
 	}
 }
 
