@@ -10,6 +10,8 @@ public class ecColision : MonoBehaviour {
 	public float danioBalaNormal = 5;
 	public float danioNaveNormal = 15;
 	public float timeLeft = 0;
+	public bool usarTiempo = false;
+	private int proyectil_original = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -64,7 +66,7 @@ public class ecColision : MonoBehaviour {
 			break;
 		case objectTypeCollision.bala_torre:
 			if (coll.gameObject.CompareTag ("enemy")) 
-			{
+			{	
 				DestroyObject (coll.gameObject);
 			}
 
@@ -76,6 +78,21 @@ public class ecColision : MonoBehaviour {
 			break;
 
 		case objectTypeCollision.nave_enemiga:
+			break;
+
+		case objectTypeCollision.destino_bala_torre:
+			{
+				if (coll != null)
+				if (coll.gameObject != null)
+				if (coll.gameObject.CompareTag ("bala_torre"))
+				if (proyectil_original >= 1)
+					DestroyObject (coll.gameObject);
+				else 
+				{
+					proyectil_original++;
+					coll.transform.position += new Vector3(0,1000000,0);
+				}
+			}
 			break;
 		}
 
