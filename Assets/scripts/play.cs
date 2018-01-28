@@ -14,7 +14,18 @@ public class play : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+	public void playCreditos()
+	{
+		SceneManager.LoadScene("creditos");
+	}
+	public void playMenuPrincipal()
+	{
+		SceneManager.LoadScene("main");
+	}
+	public void nivel_01()
+	{
+		SceneManager.LoadScene("nivel_00");
+	}
 	public void exitGame()
 	{
 		Application.Quit();

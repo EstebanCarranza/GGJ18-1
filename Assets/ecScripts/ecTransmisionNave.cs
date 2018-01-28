@@ -41,20 +41,15 @@ public class ecTransmisionNave : MonoBehaviour {
 		barraTorre6.size = valorT6;
 
 	}
-	void Update()
-	{
-		
 
-		if (Input.GetKey (KeyCode.Q)) 
-		{
-			if (valorT1 <= 1)
-			{
+	void lanzar_rayos()
+	{
+		if (Input.GetKey (KeyCode.Q)) {
+			if (valorT1 <= 1) {
 				barraTorre1.size += valorT1 += incT1;
 				torre = 1;
 			}
-		} 
-		else 
-		{
+		} else {
 			barraTorre1.size = 0;
 			valorT1 = 0;
 		}
@@ -63,14 +58,13 @@ public class ecTransmisionNave : MonoBehaviour {
 				barraTorre2.size += valorT2 += incT2;
 				torre = 2;
 			}
-		}
-		else {
+		} else {
 			barraTorre2.size = 0;
 			valorT2 = 0;
 		}
 
 
-		if(Input.GetKey (KeyCode.S)) {
+		if (Input.GetKey (KeyCode.S)) {
 			if (valorT3 <= 1) {
 				barraTorre3.size += valorT3 += incT3;
 				torre = 3;
@@ -111,7 +105,16 @@ public class ecTransmisionNave : MonoBehaviour {
 			barraTorre6.size = 0;
 			valorT6 = 0;
 		}
-	
+
+	}
+	void Update()
+	{
+		if(Time.timeScale != 0)
+		{
+			lanzar_rayos();
+		}
+
+
 
 
 	}

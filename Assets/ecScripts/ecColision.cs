@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ecCode;
+using UnityEngine.UI;
 
 public class ecColision : MonoBehaviour {
 
@@ -12,20 +13,29 @@ public class ecColision : MonoBehaviour {
 	public float timeLeft = 0;
 	public bool usarTiempo = false;
 	private int proyectil_original = 0;
+	private RedLife LifeHealt;
+
 
 	// Use this for initialization
 	void Start () {
-		
+		GameObject hand;
+		hand = GameObject.Find("RedLife");
+
+		if (hand != null) {
+			LifeHealt = hand.GetComponent<RedLife>();
+			//LifeHealt.BajarVida (vida);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (vida <= 0) {
+		if (tipoObj == objectTypeCollision.nave_principal) 
+		{
 			GameOver ();
-		} else {
-			timeLeft += Time.deltaTime;
 		}
+
+
 
 	}
 
@@ -36,10 +46,22 @@ public class ecColision : MonoBehaviour {
 		Debug.Log("trigger");
 	}
 	*/
+
 	bool GameOverV = false;
+	public Text caja;
 	void GameOver()
 	{
-		GameOverV = true;
+		if (vida <= 0) 
+		{
+			caja.text = "Fin del juego";
+			Time.timeScale = 0;
+
+		} 
+		else 
+		{
+			timeLeft += Time.deltaTime;
+		}
+
 	}
 
 
@@ -49,18 +71,19 @@ public class ecColision : MonoBehaviour {
 		switch (tipoObj) 
 		{
 		case objectTypeCollision.nave_principal:
-			if (coll.gameObject.CompareTag ("enemy")) 
-			{
-				vida -= danioBalaNormal;
+			if (coll.gameObject.CompareTag ("enemy")) {
+				if(vida > 0)
+					vida -= danioBalaNormal;
 				DestroyObject (coll.gameObject);
 			}
 
 			if (coll.gameObject.CompareTag ("bala_enemy")) {
+				if(vida>0)
 				vida -= danioBalaNormal;
 				//coll.gameObject.GetType (ecNaveEnemiga);
 				DestroyObject (coll.gameObject);
 			}
-
+			LifeHealt.BajarVida (vida);
 			break;
 		case objectTypeCollision.torre:
 			break;
@@ -96,8 +119,11 @@ public class ecColision : MonoBehaviour {
 			break;
 		}
 
-
+		if (vida < 0) {
+			vida = 0;
+		}
 
 	}
+
 
 }

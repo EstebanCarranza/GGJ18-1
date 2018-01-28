@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/nivel_00.unity
     guid: 224a91ddfacbe2047a7d19bc3907e30b
+  - enabled: 1
+    path: Assets/creditos.unity
+    guid: 22e6b9a23138216499ccca76424fc3cb
