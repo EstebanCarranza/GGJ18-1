@@ -8,7 +8,8 @@ namespace ecCode
 		translatey = 2,
 		translatez = 3,
 		translatexy = 4,
-		translatexyz = 5
+		translatexyz = 5,
+		rotacion
 	}
 }
 
