@@ -10,6 +10,7 @@ TagManager:
   - torre1
   - bala_enemy
   - bala_torre
+  - Life
   layers:
   - Default
   - TransparentFX

@@ -13,13 +13,20 @@ public class ecColision : MonoBehaviour {
 	public float timeLeft = 0;
 	public bool usarTiempo = false;
 	private int proyectil_original = 0;
+	private RedLife LifeGUI;
 
 
 
 
 	// Use this for initialization
 	void Start () {
-		
+		GameObject hand;
+		hand = GameObject.Find("RedLife");
+	
+		if (hand != null) {
+			LifeGUI = hand.GetComponent<RedLife>();
+			LifeGUI.BajarVida (100);
+		}
 	}
 	
 	// Update is called once per frame
@@ -54,9 +61,9 @@ public class ecColision : MonoBehaviour {
 		switch (tipoObj) 
 		{
 		case objectTypeCollision.nave_principal:
-			if (coll.gameObject.CompareTag ("enemy")) 
-			{
+			if (coll.gameObject.CompareTag ("enemy")) {
 				vida -= danioBalaNormal;
+
 				DestroyObject (coll.gameObject);
 			}
 
@@ -65,6 +72,7 @@ public class ecColision : MonoBehaviour {
 				//coll.gameObject.GetType (ecNaveEnemiga);
 				DestroyObject (coll.gameObject);
 			}
+			LifeGUI.BajarVida (vida);
 
 			break;
 		case objectTypeCollision.torre:
