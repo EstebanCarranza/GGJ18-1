@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224674066084741920}
   - component: {fileID: 222414984506639834}
   - component: {fileID: 114380571723398922}
+  - component: {fileID: 114522207822666974}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -72,6 +73,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114522207822666974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044091156094756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b904afed8c17cc5419d1c22de7d2576b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 114380571723398922}
+  icon: {fileID: 114786263564057974}
+  title: 
+  myMenu: {fileID: 0}
 --- !u!114 &114786263564057974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

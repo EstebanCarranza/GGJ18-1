@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224238087443600116}
+  - component: {fileID: 114760626992319952}
   m_Layer: 0
   m_Name: Radial Menu Objet
   m_TagString: Untagged
@@ -26,6 +27,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114760626992319952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819574668307118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8866270741a447b4a84f62f67ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 114522207822666974, guid: c49ba6f785ae59d4a86009557e88c9d4,
+    type: 2}
+  selected: {fileID: 114522207822666974, guid: c49ba6f785ae59d4a86009557e88c9d4, type: 2}
 --- !u!224 &224238087443600116
 RectTransform:
   m_ObjectHideFlags: 1
