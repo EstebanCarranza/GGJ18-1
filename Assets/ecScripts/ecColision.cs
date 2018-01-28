@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ecCode;
-using UnityEditor.UI;
 
 public class ecColision : MonoBehaviour {
 
@@ -14,9 +13,6 @@ public class ecColision : MonoBehaviour {
 	public bool usarTiempo = false;
 	private int proyectil_original = 0;
 	private RedLife LifeGUI;
-
-
-
 
 	// Use this for initialization
 	void Start () {
@@ -50,7 +46,6 @@ public class ecColision : MonoBehaviour {
 	bool GameOverV = false;
 	void GameOver()
 	{
-		
 		GameOverV = true;
 	}
 
