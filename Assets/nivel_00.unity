@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Transform:
   - {fileID: 280833577}
   - {fileID: 1069335253}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.79201}
 --- !u!212 &10386310
 SpriteRenderer:
@@ -337,7 +337,7 @@ Transform:
   - {fileID: 235156815}
   - {fileID: 1253439431}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -127.049}
 --- !u!212 &74403818
 SpriteRenderer:
@@ -603,6 +603,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!1 &235156814
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1253439430}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &235156817
 SpriteRenderer:
@@ -710,6 +711,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &235156819
 Rigidbody2D:
   serializedVersion: 4
@@ -790,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1069335252}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &280833579
 SpriteRenderer:
@@ -852,6 +854,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &280833581
 Rigidbody2D:
   serializedVersion: 4
@@ -910,7 +913,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 337025971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.8, z: 0}
+  m_LocalPosition: {x: 0, y: 20.6, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 447149629}
@@ -1039,7 +1042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443513954
 GameObject:
@@ -1068,8 +1071,9 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children:
   - {fileID: 725401581}
+  - {fileID: 1636348080}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 54.414}
 --- !u!212 &443513956
 SpriteRenderer:
@@ -1144,7 +1148,7 @@ Transform:
   - {fileID: 1904655969}
   - {fileID: 337025972}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &447149630
 SpriteRenderer:
@@ -1235,7 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1636348079}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &725401583
 SpriteRenderer:
@@ -1297,6 +1301,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &725401585
 Rigidbody2D:
   serializedVersion: 4
@@ -1361,7 +1366,7 @@ Transform:
   - {fileID: 1515328928}
   - {fileID: 1090914393}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &757362444
 SpriteRenderer:
@@ -1541,7 +1546,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1636348080}
   - {fileID: 1508098057}
   - {fileID: 1677811913}
   - {fileID: 443513955}
@@ -1616,7 +1620,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069335252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 22.1, z: 0}
+  m_LocalPosition: {x: -1.9, y: 26.8, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 10386309}
@@ -1689,7 +1693,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090914392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.2, z: 0}
+  m_LocalPosition: {x: 0, y: 19.7, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 757362443}
@@ -1768,7 +1772,7 @@ Transform:
   - {fileID: 1784558142}
   - {fileID: 1829001528}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -51.454002}
 --- !u!212 &1137386523
 SpriteRenderer:
@@ -1910,7 +1914,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253439430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 17.8, z: 0}
+  m_LocalPosition: {x: -4.9, y: 28.5, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 74403817}
@@ -2009,7 +2013,7 @@ Transform:
   - {fileID: 202772672}
   - {fileID: 1142087911}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508098056
 GameObject:
@@ -2043,7 +2047,7 @@ Transform:
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1508098058
 SpriteRenderer:
@@ -2105,6 +2109,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!114 &1508098060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,7 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1090914392}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1515328930
 SpriteRenderer:
@@ -2288,6 +2293,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1515328932
 Rigidbody2D:
   serializedVersion: 4
@@ -2449,12 +2455,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636348079}
-  m_LocalRotation: {x: -0, y: -0, z: 0.45720372, w: 0.88936204}
-  m_LocalPosition: {x: -352, y: 256, z: 0}
-  m_LocalScale: {x: 7.2000027, y: 7.2000027, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 29.2, z: 0}
+  m_LocalScale: {x: 0.72000045, y: 0.72000045, z: 0}
   m_Children: []
-  m_Father: {fileID: 1043388578}
-  m_RootOrder: 0
+  m_Father: {fileID: 443513955}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1636348081
 SpriteRenderer:
@@ -2527,7 +2533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677811914
 MonoBehaviour:
@@ -2549,7 +2555,7 @@ MonoBehaviour:
   torre6: {fileID: 447149628}
   torreta: 1
   secs: 0
-  coolDown: 8
+  coolDown: 10.5
   coolDownTimer1: 0
   coolDownTimer2: 0
   coolDownTimer3: 0
@@ -2557,6 +2563,13 @@ MonoBehaviour:
   coolDownTimer5: 0
   coolDownTimer6: 0
   speed: 500
+  proyectil_torre1: {fileID: 725401580}
+  proyectil_torre2: {fileID: 280833576}
+  proyectil_torre3: {fileID: 1515328927}
+  proyectil_torre4: {fileID: 235156814}
+  proyectil_torre5: {fileID: 1784558141}
+  proyectil_torre6: {fileID: 1904655968}
+  total_spawn: 1
   center: {x: 0, y: 0, z: 0}
   bala: {fileID: 0}
 --- !u!1 &1784558141
@@ -2604,7 +2617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1829001527}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1784558144
 SpriteRenderer:
@@ -2666,6 +2679,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1784558146
 Rigidbody2D:
   serializedVersion: 4
@@ -2789,7 +2803,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829001527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 18.9, z: 0}
+  m_LocalPosition: {x: 6.9, y: 33.1, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 1137386522}
@@ -2884,7 +2898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 337025971}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1904655971
 SpriteRenderer:
@@ -2946,6 +2960,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1904655973
 Rigidbody2D:
   serializedVersion: 4
