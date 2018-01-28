@@ -33,12 +33,21 @@ public class ecSpawn : MonoBehaviour {
 		
 	}
 
-	float velAparicion = 1;
+//	float velAparicion = 1;
 	// Update is called once per frame
 
 	public bool enemigosActivados = true;
 	void Update () {
-		//if (enemigosActivados) {
+
+		if (creados < cantidadObjetos) {
+
+			spawn ();	
+			creados++;
+
+		}
+		/*
+		if (enemigosActivados)
+		{
 			if (creados < cantidadObjetos) {
 			
 				spawn ();	
@@ -52,8 +61,8 @@ public class ecSpawn : MonoBehaviour {
 				} else {
 					creados = 0;
 				}
-				velAparicion += 0.1F;
+				velAparicion += 10.0F;
 			}
-		//}
+		}*/
 	}
 }
