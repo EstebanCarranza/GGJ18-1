@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ Transform:
   - {fileID: 280833577}
   - {fileID: 1069335253}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.79201}
 --- !u!212 &10386310
 SpriteRenderer:
@@ -337,7 +337,7 @@ Transform:
   - {fileID: 235156815}
   - {fileID: 1253439431}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -127.049}
 --- !u!212 &74403818
 SpriteRenderer:
@@ -603,6 +603,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!1 &235156814
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1253439430}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &235156817
 SpriteRenderer:
@@ -710,6 +711,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &235156819
 Rigidbody2D:
   serializedVersion: 4
@@ -790,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1069335252}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &280833579
 SpriteRenderer:
@@ -852,6 +854,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &280833581
 Rigidbody2D:
   serializedVersion: 4
@@ -896,6 +899,9 @@ GameObject:
   m_Component:
   - component: {fileID: 337025972}
   - component: {fileID: 337025973}
+  - component: {fileID: 337025975}
+  - component: {fileID: 337025974}
+  - component: {fileID: 337025976}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -910,7 +916,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 337025971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.8, z: 0}
+  m_LocalPosition: {x: 0, y: 31.3, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 447149629}
@@ -960,6 +966,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &337025974
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337025971}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &337025975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337025971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &337025976
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337025971}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &425855992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1097,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443513954
 GameObject:
@@ -1068,8 +1126,9 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children:
   - {fileID: 725401581}
+  - {fileID: 1636348080}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 54.414}
 --- !u!212 &443513956
 SpriteRenderer:
@@ -1144,7 +1203,7 @@ Transform:
   - {fileID: 1904655969}
   - {fileID: 337025972}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &447149630
 SpriteRenderer:
@@ -1235,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1636348079}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &725401583
 SpriteRenderer:
@@ -1297,6 +1356,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &725401585
 Rigidbody2D:
   serializedVersion: 4
@@ -1361,7 +1421,7 @@ Transform:
   - {fileID: 1515328928}
   - {fileID: 1090914393}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &757362444
 SpriteRenderer:
@@ -1541,7 +1601,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1636348080}
   - {fileID: 1508098057}
   - {fileID: 1677811913}
   - {fileID: 443513955}
@@ -1602,6 +1661,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1069335253}
   - component: {fileID: 1069335254}
+  - component: {fileID: 1069335256}
+  - component: {fileID: 1069335255}
+  - component: {fileID: 1069335257}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -1616,7 +1678,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069335252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 22.1, z: 0}
+  m_LocalPosition: {x: -0.8, y: 26.8, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 10386309}
@@ -1666,6 +1728,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1069335255
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069335252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000011920929, y: 0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1069335256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069335252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &1069335257
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069335252}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &1090914392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1789,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1090914393}
   - component: {fileID: 1090914394}
+  - component: {fileID: 1090914396}
+  - component: {fileID: 1090914395}
+  - component: {fileID: 1090914397}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -1689,7 +1806,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090914392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.2, z: 0}
+  m_LocalPosition: {x: 0, y: 32.6, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 757362443}
@@ -1739,6 +1856,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1090914395
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090914392}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0000038146973}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1090914396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090914392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &1090914397
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090914392}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &1137386521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1937,7 @@ Transform:
   - {fileID: 1784558142}
   - {fileID: 1829001528}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -51.454002}
 --- !u!212 &1137386523
 SpriteRenderer:
@@ -1896,6 +2065,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1253439431}
   - component: {fileID: 1253439432}
+  - component: {fileID: 1253439434}
+  - component: {fileID: 1253439433}
+  - component: {fileID: 1253439435}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -1910,7 +2082,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253439430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 17.8, z: 0}
+  m_LocalPosition: {x: -5.4, y: 30.9, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 74403817}
@@ -1960,6 +2132,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1253439433
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253439430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000047683716, y: 0.000015258789}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1253439434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253439430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &1253439435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253439430}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &1315149565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,7 +2233,7 @@ Transform:
   - {fileID: 202772672}
   - {fileID: 1142087911}
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508098056
 GameObject:
@@ -2043,7 +2267,7 @@ Transform:
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1508098058
 SpriteRenderer:
@@ -2105,6 +2329,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 1
 --- !u!114 &1508098060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,7 +2451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1090914392}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1515328930
 SpriteRenderer:
@@ -2288,6 +2513,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1515328932
 Rigidbody2D:
   serializedVersion: 4
@@ -2436,6 +2662,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1636348080}
   - component: {fileID: 1636348081}
+  - component: {fileID: 1636348083}
+  - component: {fileID: 1636348082}
+  - component: {fileID: 1636348084}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -2449,12 +2678,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636348079}
-  m_LocalRotation: {x: -0, y: -0, z: 0.45720372, w: 0.88936204}
-  m_LocalPosition: {x: -352, y: 256, z: 0}
-  m_LocalScale: {x: 7.2000027, y: 7.2000027, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7, y: 28.8, z: 0}
+  m_LocalScale: {x: 0.72000045, y: 0.72000045, z: 0}
   m_Children: []
-  m_Father: {fileID: 1043388578}
-  m_RootOrder: 0
+  m_Father: {fileID: 443513955}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1636348081
 SpriteRenderer:
@@ -2500,6 +2729,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1636348082
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636348079}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000035762787, y: 0.000015258789}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1636348083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636348079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &1636348084
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1636348079}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &1677811912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1043388578}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677811914
 MonoBehaviour:
@@ -2549,7 +2830,7 @@ MonoBehaviour:
   torre6: {fileID: 447149628}
   torreta: 1
   secs: 0
-  coolDown: 8
+  coolDown: 20
   coolDownTimer1: 0
   coolDownTimer2: 0
   coolDownTimer3: 0
@@ -2557,6 +2838,13 @@ MonoBehaviour:
   coolDownTimer5: 0
   coolDownTimer6: 0
   speed: 500
+  proyectil_torre1: {fileID: 725401580}
+  proyectil_torre2: {fileID: 280833576}
+  proyectil_torre3: {fileID: 1515328927}
+  proyectil_torre4: {fileID: 235156814}
+  proyectil_torre5: {fileID: 1784558141}
+  proyectil_torre6: {fileID: 1904655968}
+  total_spawn: 10
   center: {x: 0, y: 0, z: 0}
   bala: {fileID: 0}
 --- !u!1 &1784558141
@@ -2604,7 +2892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 1829001527}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1784558144
 SpriteRenderer:
@@ -2666,6 +2954,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1784558146
 Rigidbody2D:
   serializedVersion: 4
@@ -2775,6 +3064,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1829001528}
   - component: {fileID: 1829001529}
+  - component: {fileID: 1829001531}
+  - component: {fileID: 1829001530}
+  - component: {fileID: 1829001532}
   m_Layer: 0
   m_Name: bala_torreta
   m_TagString: Untagged
@@ -2789,7 +3081,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829001527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 18.9, z: 0}
+  m_LocalPosition: {x: 3.8, y: 33.5, z: 0}
   m_LocalScale: {x: 0.71999997, y: 0.71999997, z: 0}
   m_Children: []
   m_Father: {fileID: 1137386522}
@@ -2839,6 +3131,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1829001530
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829001527}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1829001531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829001527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e913510a83b00348a52fdb2d8fd7c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 0
+  tipoObj: 5
+  danioBalaNormal: 5
+  danioNaveNormal: 15
+  timeLeft: 0
+  usarTiempo: 0
+--- !u!50 &1829001532
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829001527}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!1 &1904655968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +3228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finDisparo: {fileID: 337025971}
-  fixedSpeed: 2.5
+  fixedSpeed: 100
   tipoBala: 2
 --- !u!212 &1904655971
 SpriteRenderer:
@@ -2946,6 +3290,7 @@ MonoBehaviour:
   danioBalaNormal: 5
   danioNaveNormal: 15
   timeLeft: 0
+  usarTiempo: 0
 --- !u!50 &1904655973
 Rigidbody2D:
   serializedVersion: 4
