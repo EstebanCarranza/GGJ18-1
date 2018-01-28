@@ -24,7 +24,7 @@ public class ecTorre : MonoBehaviour {
 
 	public float secs = 0;
 
-	public float coolDown = 8;
+	public float coolDown = 10.5F;
 
 	public float coolDownTimer1 = 0;
 	public float coolDownTimer2 = 0;
@@ -112,65 +112,105 @@ public class ecTorre : MonoBehaviour {
 		switch (torreta) {
 		case 1:
 			if (Input.GetKey (KeyCode.Q) && coolDownTimer1 == 0) {	
-				rotate_object (torre1, izqDer);
+				if (Input.GetKey (KeyCode.Q) && coolDownTimer1 > 5 && coolDownTimer1 <= 10) {
+					rotate_object (torre1, izqDer);
+				}
 				coolDownTimer1 = coolDown; } 
 			else	torreta = 0;
 			break;
 		case 2:
 			if (Input.GetKey (KeyCode.A) && coolDownTimer2 == 0) {	
-				rotate_object (torre2, izqDer);
+				if (Input.GetKey (KeyCode.A) && coolDownTimer2 > 5 && coolDownTimer2 <= 10) {
+					rotate_object (torre2, izqDer);
+				}
 				coolDownTimer2 = coolDown; } 
 			else	torreta = 0;
 			break;
 		case 3:
 			if (Input.GetKey (KeyCode.S) && coolDownTimer3 == 0) {	
-				rotate_object (torre3, izqDer);
+				if (Input.GetKey (KeyCode.S) && coolDownTimer3 > 5 && coolDownTimer3 <= 10) {
+					rotate_object (torre3, izqDer);
+				}
 				coolDownTimer3 = coolDown; }
 			else	torreta = 0;
 			break;
 		case 4:
 			if (Input.GetKey (KeyCode.D) && coolDownTimer4 == 0) {	
-				rotate_object (torre4, izqDer);
+				if (Input.GetKey (KeyCode.D) && coolDownTimer4 > 5 && coolDownTimer4 <= 10) {
+					rotate_object (torre4, izqDer);
+				}
 				coolDownTimer4 = coolDown; } 
 			else	torreta = 0;
 			break;
 		case 5:
 			if (Input.GetKey (KeyCode.E) && coolDownTimer5 == 0) {	
-				rotate_object (torre5, izqDer);
+				if (Input.GetKey (KeyCode.E) && coolDownTimer5 > 5 && coolDownTimer5 <= 10) {
+					rotate_object (torre5, izqDer);
+				}
 				coolDownTimer5 = coolDown; } 
 			else	torreta = 0;
 			break;
 		case 6:
 			if (Input.GetKey (KeyCode.W) && coolDownTimer6 == 0) {
-				rotate_object (torre6, izqDer);
+				if (Input.GetKey (KeyCode.W) && coolDownTimer6 > 5 && coolDownTimer6 <= 10) {
+					rotate_object (torre6, izqDer);
+				}
 				coolDownTimer6 = coolDown; } 
 			else	torreta = 0;
 			break;
+		/*case 6:
+			if (Input.GetKey (KeyCode.W) && coolDownTimer6 == 0) {
+				rotate_object (torre6, izqDer);
+				coolDownTimer6 = coolDown; } 
+			else	torreta = 0;
+			break; */
 		default:
-			if (Input.GetKey (KeyCode.Q) && coolDownTimer1 > 5) {
+			if (Input.GetKey (KeyCode.Q) && coolDownTimer1 > 5 && coolDownTimer1 < 10) {
 				rotate_object (torre1, izqDer);
-			} else if (Input.GetKey (KeyCode.Q))
+			} else if (Input.GetKey (KeyCode.Q) && coolDownTimer1 >= 10) {
+				torreta = 1; 
+			} else if (Input.GetKey (KeyCode.Q)) {
 				torreta = 1;
-			if (Input.GetKey (KeyCode.A) && coolDownTimer2 > 5) {
+			}
+			if (Input.GetKey (KeyCode.A) && coolDownTimer2 > 5 && coolDownTimer2 < 10) {
 				rotate_object (torre2, izqDer); 
-			} else if (Input.GetKey (KeyCode.A))
+			} else if (Input.GetKey (KeyCode.A) && coolDownTimer2 >= 10) {
 				torreta = 2;
-			if (Input.GetKey (KeyCode.S) && coolDownTimer3 > 5) {
+			} else if (Input.GetKey (KeyCode.A)) {
+				torreta = 2;
+			}
+			if (Input.GetKey (KeyCode.S) && coolDownTimer3 > 5 && coolDownTimer3 < 10) {
 				rotate_object (torre3, izqDer); 
-			} else if (Input.GetKey (KeyCode.S))
+			} else if (Input.GetKey (KeyCode.S) && coolDownTimer3 >= 10) {
 				torreta = 3;
-			if (Input.GetKey (KeyCode.D) && coolDownTimer4 > 5) {
+			} else if (Input.GetKey (KeyCode.S)) {
+				torreta = 3;
+			}
+			if (Input.GetKey (KeyCode.D) && coolDownTimer4 > 5 && coolDownTimer4 < 10) {
 				rotate_object (torre4, izqDer); 
-			} else if (Input.GetKey (KeyCode.D))
+			} else if (Input.GetKey (KeyCode.D) && coolDownTimer4 >= 10) {
 				torreta = 4;
-			if (Input.GetKey (KeyCode.E) && coolDownTimer5 > 5) {
+			} else if (Input.GetKey (KeyCode.D)) {
+				torreta = 4;
+			}
+			if (Input.GetKey (KeyCode.E) && coolDownTimer5 > 5 && coolDownTimer5 < 10) {
 				rotate_object (torre5, izqDer); 
-			} else if (Input.GetKey (KeyCode.E))
+			} else if (Input.GetKey (KeyCode.E) && coolDownTimer5 >= 10) {
 				torreta = 5;
-			if (Input.GetKey (KeyCode.W) && coolDownTimer6 > 5) {
+			} else if (Input.GetKey (KeyCode.E)) {
+				torreta = 5;
+			}
+			if (Input.GetKey (KeyCode.W) && coolDownTimer6 > 5 && coolDownTimer6 < 10) {
+				rotate_object (torre6, izqDer); 
+			} else if (Input.GetKey (KeyCode.W) && coolDownTimer6 >= 10){
+				torreta = 6;
+			} else if (Input.GetKey (KeyCode.W)) {
+				torreta = 6;
+			}
+			/*if (Input.GetKey (KeyCode.W) && coolDownTimer6 > 5) {
 				rotate_object (torre6, izqDer); 
 			} else if (Input.GetKey (KeyCode.W))
-				torreta = 6;
+				torreta = 6;*/
 
 			break;
 		}
