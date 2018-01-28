@@ -7,7 +7,7 @@ public class ecTransforms : MonoBehaviour {
 
 
 	public float x, y, z;
-	public float speed;
+
 	public ecTypeTransform tipoTransformacion;
 	public bool activar = true;
 
@@ -36,10 +36,6 @@ public class ecTransforms : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x + x, transform.position.y + y, transform.position.z + z);
 
 	}
-	void rotacion()
-	{
-		transform.Rotate(Vector3.forward, speed * Time.deltaTime);
-	}
 
 	void Start()
 	{
@@ -66,11 +62,6 @@ public class ecTransforms : MonoBehaviour {
 			case ecTypeTransform.translatexyz:
 				translateXYZ ();
 				break;
-
-			case ecTypeTransform.rotacion:
-				rotacion ();
-				break;
-
 			}
 		}
 	}
