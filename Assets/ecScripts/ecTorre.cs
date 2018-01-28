@@ -40,6 +40,77 @@ public class ecTorre : MonoBehaviour {
 	public float speed = 100;
 	bool izqDer = false;
 
+	public GameObject proyectil_torre1;
+	public GameObject proyectil_torre2;
+	public GameObject proyectil_torre3;
+	public GameObject proyectil_torre4;
+	public GameObject proyectil_torre5;
+	public GameObject proyectil_torre6;
+
+	private int numProyectilTorre = 0;
+	private int spawn = 0;
+	public int total_spawn = 1;
+	private bool disparar = false;
+
+
+	void spawn_proyectil()
+	{
+		if (spawn < total_spawn) {
+			switch (numProyectilTorre) {
+
+			case 1: //torreta1
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre1.transform.position.x, torre1.transform.position.y, 0);
+					Instantiate (proyectil_torre1, pos, Quaternion.identity);		
+					break;
+				}
+			case 2: //torreta2
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre2.transform.position.x, torre2.transform.position.y, 0);
+					Instantiate (proyectil_torre2, pos, Quaternion.identity);		
+					break;
+				}
+			case 3: //torreta3
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre3.transform.position.x, torre3.transform.position.y, 0);
+					Instantiate (proyectil_torre3, pos, Quaternion.identity);		
+					break;
+				}
+			case 4: //torreta4
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre4.transform.position.x, torre4.transform.position.y, 0);
+					Instantiate (proyectil_torre4, pos, Quaternion.identity);		
+					break;
+				}
+			case 5: //torreta5
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre5.transform.position.x, torre5.transform.position.y, 0);
+					Instantiate (proyectil_torre5, pos, Quaternion.identity);		
+					break;
+				}
+			case 6: //torreta6
+				{
+					Vector3 pos;
+					pos = center + new Vector3 (torre6.transform.position.x, torre6.transform.position.y, 0);
+					Instantiate (proyectil_torre6, pos, Quaternion.identity);		
+					break;
+				}
+			default:
+				break;
+			}
+			spawn++;
+
+		} else 
+		{
+			disparar = false;
+		}
+	}
+
 	void rotate_object (GameObject obj, bool direccion)
 	{
 		if (direccion) 
@@ -56,6 +127,13 @@ public class ecTorre : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if(Input.GetKey (KeyCode.Space))
+		{
+			spawn = 0;
+			disparar = true;
+		}
+		if(disparar) spawn_proyectil ();
 
 		if (coolDownTimer1 < 0) {
 			coolDownTimer1 = 0;
@@ -115,7 +193,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.Q) && coolDownTimer1 > 5 && coolDownTimer1 <= 10) {
 					rotate_object (torre1, izqDer);
 				}
-				coolDownTimer1 = coolDown; } 
+				coolDownTimer1 = coolDown; 
+				numProyectilTorre = 1;	} 
 			else	torreta = 0;
 			break;
 		case 2:
@@ -123,7 +202,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.A) && coolDownTimer2 > 5 && coolDownTimer2 <= 10) {
 					rotate_object (torre2, izqDer);
 				}
-				coolDownTimer2 = coolDown; } 
+				coolDownTimer2 = coolDown; 
+				numProyectilTorre = 2;} 
 			else	torreta = 0;
 			break;
 		case 3:
@@ -131,7 +211,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.S) && coolDownTimer3 > 5 && coolDownTimer3 <= 10) {
 					rotate_object (torre3, izqDer);
 				}
-				coolDownTimer3 = coolDown; }
+				coolDownTimer3 = coolDown; 
+				numProyectilTorre = 3;}
 			else	torreta = 0;
 			break;
 		case 4:
@@ -139,7 +220,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.D) && coolDownTimer4 > 5 && coolDownTimer4 <= 10) {
 					rotate_object (torre4, izqDer);
 				}
-				coolDownTimer4 = coolDown; } 
+				coolDownTimer4 = coolDown;
+				numProyectilTorre = 4;} 
 			else	torreta = 0;
 			break;
 		case 5:
@@ -147,7 +229,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.E) && coolDownTimer5 > 5 && coolDownTimer5 <= 10) {
 					rotate_object (torre5, izqDer);
 				}
-				coolDownTimer5 = coolDown; } 
+				coolDownTimer5 = coolDown; 
+				numProyectilTorre = 5;} 
 			else	torreta = 0;
 			break;
 		case 6:
@@ -155,7 +238,8 @@ public class ecTorre : MonoBehaviour {
 				if (Input.GetKey (KeyCode.W) && coolDownTimer6 > 5 && coolDownTimer6 <= 10) {
 					rotate_object (torre6, izqDer);
 				}
-				coolDownTimer6 = coolDown; } 
+				coolDownTimer6 = coolDown; 
+				numProyectilTorre = 6;} 
 			else	torreta = 0;
 			break;
 		/*case 6:
@@ -216,6 +300,8 @@ public class ecTorre : MonoBehaviour {
 		}
 
 		if (secs > 0) {	secs--; }
+
+		spawn_proyectil ();
 	}
 
 	public Vector3 center;
